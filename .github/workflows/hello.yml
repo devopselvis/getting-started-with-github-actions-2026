@@ -10,4 +10,11 @@ jobs:
 
     steps:
 
-      - run: echo "Hello from GitHub Actions!"
+      - name: Say Hello
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Check out repo
+        uses: actions/checkout@v6
+
+      - name: List repo files
+        run: ls -la
