@@ -13,5 +13,8 @@ jobs:
       - name: Say Hello
         run: echo "Hello YouTube Shorts!!!"
 
+      - name: Check out repo
+        uses: actions/checkout@v6
+
       - name: List repo files
         run: ls -la
