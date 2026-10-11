@@ -1,0 +1,21 @@
+name: Worklow Triggers Demo
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+
+  explain:
+    name: Explain this run
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show what started this run
+        env:
+          EVENT_NAME: ${{github.event_name}}
+          REF: ${{github.ref}}
+        run: |
+          printf 'Event %s\n' "$EVENT_NAME"
+          printf 'Ref: %s\n' "$REF"
