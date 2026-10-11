@@ -1,3 +1,5 @@
 This file demonstrates Path filtering
 
 This should not trigger the workflow to run
+
+The workflow should run
