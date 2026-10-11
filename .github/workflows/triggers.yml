@@ -14,6 +14,14 @@ on:
     paths:
       - 'src/**'
       - '.github/workflows/**'
+  workflow_dispatch:
+    inputs:
+      greeting:
+        description: Message to print
+        required: true
+        default: Hello from a manual run
+        type: string
+    
 
 permissions:
   contents: read
@@ -32,3 +40,9 @@ jobs:
         run: |
           printf 'Event %s\n' "$EVENT_NAME"
           printf 'Ref: %s\n' "$REF"
+
+      - name: Show manual greeting
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GREETING: ${{inputs.greeting}}
+        run: printf '%s\n' "$GREETING"
