@@ -1,5 +1,1 @@
 This file demonstrates Path filtering
-
-Watch me skip running the workflow
-
-This should trigger a workflow
