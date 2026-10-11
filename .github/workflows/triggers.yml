@@ -24,6 +24,8 @@ on:
   schedule:
     - cron: '*/5 * * * *'
       timezone: 'America/Chicago'
+  repository_dispatch:
+    types: [say-hello]
 
 permissions:
   contents: read
@@ -47,4 +49,10 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         env:
           GREETING: ${{inputs.greeting}}
+        run: printf '%s\n' "$GREETING"
+
+      - name: Show custom event greeting
+        if: github.event_name == 'repository_dispatch'
+        env:
+          GREETING: ${{github.event.client_payload.greeting}}
         run: printf '%s\n' "$GREETING"
