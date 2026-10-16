@@ -3,4 +3,4 @@ I contain demos related to github actions - refreshed for 2026
 This repository contains my first GitHub Actions workflow
 Learning workflows triggers
 
-Making a change for YouTube
+Making a change for YouTube channel
