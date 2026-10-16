@@ -21,9 +21,9 @@ on:
         required: true
         default: Hello from a manual run
         type: string
-  schedule:
-    - cron: '*/5 * * * *'
-      timezone: 'America/Chicago'
+  #schedule:
+  #  - cron: '*/5 * * * *'
+  #    timezone: 'America/Chicago'
   repository_dispatch:
     types: [say-hello]
 
